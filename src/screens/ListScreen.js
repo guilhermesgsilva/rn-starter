@@ -3,29 +3,32 @@ import { Text, StyleSheet, View, FlatList } from "react-native";
 
 const ListScreen = () => {
   const friends = [
-    { name: "Alice" },
-    { name: "Bob" },
-    { name: "Charlie" },
-    { name: "Dave" },
-    { name: "Emily" },
-    { name: "Frank" },
-    { name: "Grace" },
-    { name: "Henry" },
-    { name: "Isabella" },
-    { name: "Jack" },
+    { name: "Alice", age: 25 },
+    { name: "Bob", age: 30 },
+    { name: "Charlie", age: 28 },
+    { name: "Dave", age: 27 },
+    { name: "Emily", age: 26 },
+    { name: "Frank", age: 31 },
+    { name: "Grace", age: 29 },
+    { name: "Henry", age: 24 },
+    { name: "Isabella", age: 23 },
+    { name: "Jack", age: 32 },
   ];
 
   return (
-    <View>
+    <View style={styles.wrapper}>
       <Text style={styles.title}>List Screen</Text>
       <FlatList
-        horizontal
-        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
         keyExtractor={(item) => item.name}
         data={friends}
         renderItem={({ item, index }) => {
           // element === {item: {name: "Alice"}, index: 0}
-          return <Text style={styles.listItem}>{item.name}</Text>;
+          return (
+            <Text style={styles.listItem}>
+              {item.name} - {item.age} years old
+            </Text>
+          );
         }}
       />
     </View>
@@ -33,12 +36,19 @@ const ListScreen = () => {
 };
 
 const styles = StyleSheet.create({
+  wrapper: {
+    marginHorizontal: 10,
+    marginVertical: 10,
+  },
   title: {
     fontSize: 30,
+    textAlign: "center",
   },
   listItem: {
-    marginVertical: 50,
-    marginHorizontal: 50,
+    paddingVertical: 50,
+    borderColor: "black",
+    borderWidth: 1,
+    textAlign: "center",
   },
 });
 
