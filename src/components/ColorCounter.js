@@ -3,7 +3,7 @@ import { Text, StyleSheet, View, Button } from "react-native";
 
 const COLOR_INCREMENT = 15;
 
-const ColorCounter = ({ title, setColor, color }) => {
+const ColorCounter = ({ title, color, setColor }) => {
   const handleIncrease = () => {
     if (color + COLOR_INCREMENT > 255) {
       setColor(255);
