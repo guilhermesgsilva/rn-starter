@@ -4,7 +4,7 @@ import { Text, StyleSheet, View, Button } from "react-native";
 const HomeScreen = ({navigation}) => {
   return (
     <View>
-      <Text style={styles.text}>Hello world!</Text>
+      <Text style={styles.title}>Hello world!</Text>
       <Button
         onPress={() => navigation.navigate("Components")}
         title="Go to Components Demo"
@@ -29,6 +29,10 @@ const HomeScreen = ({navigation}) => {
         onPress={() => navigation.navigate("Square")}
         title="Go to Square Demo"
       />
+      <Button
+        onPress={() => navigation.navigate("Text")}
+        title="Go to Text Demo"
+      />
       {/* <TouchableOpacity onPress={() => navigation.navigate("List")}>
         <Text>Go to List Demo</Text>
       </TouchableOpacity> */}
@@ -37,8 +41,8 @@ const HomeScreen = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  text: {
-    fontSize: 30,
+  title: {
+    fontSize: 45,
   },
 });
 

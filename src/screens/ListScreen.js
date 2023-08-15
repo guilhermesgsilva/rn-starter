@@ -41,10 +41,11 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   title: {
-    fontSize: 30,
+    fontSize: 45,
     textAlign: "center",
   },
   listItem: {
+    fontSize: 30,
     paddingVertical: 50,
     borderColor: "black",
     borderWidth: 1,
